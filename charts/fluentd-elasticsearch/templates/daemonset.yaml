@@ -155,6 +155,9 @@ spec:
 {{- range $port := .Values.service.ports }}
           - name: {{ $port.name }}
             containerPort: {{ $port.port }}
+{{- if $port.hostPort }}
+            hostPort: {{ $port.hostPort }}
+{{- end }}
 {{- if $port.protocol }}
             protocol: {{ $port.protocol }}
 {{- end }}

@@ -107,6 +107,7 @@ The following table lists the configurable parameters of the Fluentd elasticsear
 | `service.ports[].type`                       | Service type (ClusterIP/NodePort)                                              | `ClusterIP`                            |
 | `service.ports[].name`                       | One of service ports name                                                      | Not Set                                |
 | `service.ports[].port`                       | Service port                                                                   | Not Set                                |
+| `service.ports[].hostPort`                   | Host port                                                                      | Not Set                                |
 | `service.ports[].nodePort`                   | NodePort port (when service.type is NodePort)                                  | Not Set                                |
 | `service.ports[].protocol`                   | Service protocol(optional, can be TCP/UDP)                                     | Not Set                                |
 | `serviceAccount.create`                      | Specifies whether a service account should be created.                         | `true`                                 |

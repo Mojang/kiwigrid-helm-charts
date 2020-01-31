@@ -1,6 +1,7 @@
 {{- if .Values.service }}
 {{- range $port := .Values.service.ports  }}
 {{- $service_type := $port.type | default "ClusterIP" }}
+{{- if or (ne $service_type "ClusterIP") (not $port.hostPort) }}
 ---
 apiVersion: v1
 kind: Service
@@ -27,5 +28,6 @@ spec:
   selector:
     app.kubernetes.io/name: {{ include "fluentd-elasticsearch.name" $ }}
     app.kubernetes.io/instance: {{ $.Release.Name }}
+{{- end }}
 {{- end }}
 {{- end }}

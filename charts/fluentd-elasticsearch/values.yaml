@@ -187,6 +187,10 @@ service: {}
   #   - name: "monitor-agent"
   #     type: ClusterIP
   #     port: 24231
+  #   - name: "fluentd-forward"
+  #     type: ClusterIP
+  #     port: 24224
+  #     hostPort: 24224
 
 serviceMonitor:
   ## If true, a ServiceMonitor CRD is created for a prometheus operator
